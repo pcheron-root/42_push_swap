@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_utils.c                                        :+:      :+:    :+:   */
+/*   stack_util_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:51 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/25 01:02:54 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/26 01:11:40 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ t_stack   *ft_stacklast(t_stack *stack)
 
 void    ft_stackadd_back(t_stack **stack, t_stack *new)
 {
-    if (!stack)
+    if (!(*stack))
         *stack = new;
     else
-    {
         ft_stacklast(*stack)->next = new;
-    }
 }
 
 void    ft_stackadd_front(t_stack **stack, t_stack *new)
@@ -48,20 +46,31 @@ void    ft_stackadd_front(t_stack **stack, t_stack *new)
     if (!new)
         return ;
     new->next = *stack;
-    if (!*stack)
-        return ;
     *stack = new;
+    // if (!*stack)
+    //     return ;
 }
 
-void    ft_stackfree(t_list **stack)
+void    ft_stackclear(t_stack **stack)
 {
     t_stack *tmp;
 
     while (*stack)
     {
         tmp = (*stack)->next;
-        ft_free(stack);
+        free(*stack);
         *stack = tmp;
     }
     *stack = NULL;
+}
+
+#include <stdio.h>
+void	ft_putstack(t_stack *stack)
+{
+	printf("stack\n");
+	while (stack)
+	{
+		printf("%d.%d\n", stack->nbr, stack->index);
+		stack = stack->next;
+	}
 }

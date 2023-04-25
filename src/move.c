@@ -6,24 +6,11 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:58 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/25 01:32:53 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/26 01:38:38 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void    ft_set_index(t_stack *stack)
-{
-    int i;
-
-    i = 0;
-    while (stack)
-    {
-        stack->index = i;
-        stack = stack->next;
-        i++;
-    }
-}
 
 void    ft_push(t_stack **stack_src, t_stack **stack_dest)
 {
@@ -31,10 +18,9 @@ void    ft_push(t_stack **stack_src, t_stack **stack_dest)
 
     tmp = *stack_src;
     *stack_src = (*stack_src)->next;
-    tmp->next = *stack_dest;
-    *stack_dest = tmp;
-    ft_set_index(stack_dest);
-    ft_set_index(stack_src);
+	ft_stackadd_front(stack_dest, tmp);
+    ft_set_index(*stack_dest);
+    ft_set_index(*stack_src);
 }
 
 void	ft_rotate(t_stack **stack)
@@ -44,7 +30,8 @@ void	ft_rotate(t_stack **stack)
 	if ((*stack)->next)
 	{
 		tmp = (*stack)->next;
-		ft_lstadd_back(&tmp, *stack);
+		(*stack)->next = NULL;
+		ft_stackadd_back(&tmp, *stack);
 		*stack = tmp;
 		// (*stack)->previous = NULL;
 		// (*stack)->next->previous = *stack;
@@ -54,13 +41,17 @@ void	ft_rotate(t_stack **stack)
 
 void	ft_r_rotate(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*tmp1;
+	t_stack	*tmp2;
 
 	if ((*stack)->next)
 	{
-		tmp = ft_lstlast(*stack);
-		// tmp->previous->next = NULL;
-		ft_lstadd_front(stack, tmp)
+		tmp1 = ft_stacklast(*stack);
+		tmp2 = *stack;
+		while (tmp2->next->next)
+			tmp2 = tmp2->next;
+		tmp2->next = NULL;
+		ft_stackadd_front(stack, tmp1);
 		ft_set_index(*stack);
 	}
 }

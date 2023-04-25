@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:45 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/25 01:02:48 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/25 21:40:16 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ bool    ft_atoi(int *result, char *str)
     *result = 0;
     while (str[i] >='0' && str[i] <= '9')
     {
-        if (*result > *result * 10 + str[i] - 48)
+        if (*result > *result * 10 + str[i] - 48) // fix INT_MAX + 1
             return (false);
         *result = *result * 10 + str[i] - 48;
         i++;
     }
-    if (str[i] || (*result == INT_MAX && sign < 0))
-        return (false);
+    // if (str[i] || (*result == INT_MAX && sign < 0))
+    //     return (false);
     *result *= sign;
     return (true);
 }

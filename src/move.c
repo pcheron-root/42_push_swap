@@ -6,21 +6,21 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:58 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/26 01:38:38 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/29 14:28:12 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void    ft_push(t_stack **stack_src, t_stack **stack_dest)
+void	ft_push(t_stack **stack_src, t_stack **stack_dest)
 {
-    t_stack   *tmp;
+	t_stack	*tmp;
 
-    tmp = *stack_src;
-    *stack_src = (*stack_src)->next;
+	tmp = *stack_src;
+	*stack_src = (*stack_src)->next;
 	ft_stackadd_front(stack_dest, tmp);
-    ft_set_index(*stack_dest);
-    ft_set_index(*stack_src);
+	ft_set_index(*stack_dest);
+	ft_set_index(*stack_src);
 }
 
 void	ft_rotate(t_stack **stack)
@@ -33,8 +33,6 @@ void	ft_rotate(t_stack **stack)
 		(*stack)->next = NULL;
 		ft_stackadd_back(&tmp, *stack);
 		*stack = tmp;
-		// (*stack)->previous = NULL;
-		// (*stack)->next->previous = *stack;
 		ft_set_index(*stack);
 	}
 }

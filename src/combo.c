@@ -6,13 +6,14 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:59:07 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/27 21:10:55 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/29 14:28:07 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_combo_rarb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
+void	ft_combo_rarb(int ind_a, int ind_b, t_stack **stack_a,
+		t_stack **stack_b)
 {
 	while (ind_a > 0 && ind_b > 0)
 	{
@@ -38,7 +39,8 @@ void	ft_combo_rarb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
 	ft_push(stack_b, stack_a);
 }
 
-void	ft_combo_rrarb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
+void	ft_combo_rrarb(int ind_a, int ind_b, t_stack **stack_a,
+		t_stack **stack_b)
 {
 	int	size_stack_a;
 
@@ -59,7 +61,8 @@ void	ft_combo_rrarb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
 	ft_push(stack_b, stack_a);
 }
 
-void	ft_combo_rarrb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
+void	ft_combo_rarrb(int ind_a, int ind_b, t_stack **stack_a,
+		t_stack **stack_b)
 {
 	int	size_stack_b;
 
@@ -80,14 +83,14 @@ void	ft_combo_rarrb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
 	ft_push(stack_b, stack_a);
 }
 
-void	ft_combo_rrarrb(int ind_a, int ind_b, t_stack **stack_a, t_stack **stack_b)
+void	ft_combo_rrarrb(int ind_a, int ind_b, t_stack **stack_a,
+		t_stack **stack_b)
 {
 	int	size_stack_a;
 	int	size_stack_b;
 
 	size_stack_a = ft_stacklast(*stack_a)->index;
 	size_stack_b = ft_stacklast(*stack_b)->index;
-	// printf("les index A:%d/%d B:%d/%d\n", ind_a, size_stack_a, ind_b, size_stack_b);
 	while (ind_a && ind_a <= size_stack_a && ind_b && ind_b <= size_stack_b)
 	{
 		write(1, "rrr\n", 4);

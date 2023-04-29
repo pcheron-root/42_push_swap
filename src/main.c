@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:51:00 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/29 14:30:46 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/29 14:53:08 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_make_best_combo(t_stack **stack_a, t_stack **stack_b)
 		ft_combo_rarrb(ind_big_bro, ind_lil_bro, stack_a, stack_b);
 }
 
-void	ft_pablo_sort(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 		ft_stackadd_back(&stack_a, new);
 	}
 	ft_set_index(stack_a);
-	ft_pablo_sort(&stack_a, &stack_b);
+	ft_sort(&stack_a, &stack_b);
 	ft_stackclear(&stack_a);
 	return (EXIT_SUCCESS);
 }

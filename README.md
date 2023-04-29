@@ -50,6 +50,6 @@ index of a + (max index of b - current index of b) + 1 (to put on top of the sta
 **Reverse rotate A and rotate B**
 index of b + (max index of a - current index of a) + 1 (to put on top of the stack)
 
-###Last step - make order
+### Last step - make order
 
 Use rotate and reverse rotate for put the smallest element on top of the stack

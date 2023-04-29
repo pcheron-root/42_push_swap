@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 13:43:18 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/26 00:20:50 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/27 20:08:02 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,21 @@ int ft_find_big_brother(t_stack *stack, int nbr)
     int big_bro;
     int index;
     
+	// printf("je cherche le grand frere de ce nombre : %d\n", nbr);
     if (nbr > ft_find_max(stack)->nbr)
         return (ft_find_min(stack)->index);
     big_bro = INT_MAX;
     index = 0;
     while (stack)
     {
-        if (stack->nbr > nbr && stack->nbr <= INT_MAX)
+        if (stack->nbr > nbr && stack->nbr <= big_bro)
         {
             index = stack->index;
             big_bro = stack->nbr; 
         }
         stack = stack->next;
     }
+	// printf("je trouve cet index : %d\n", index);
     return (index);
 }
 
@@ -83,9 +85,11 @@ int ft_find_best_combo(int ind_big_bro, int ind_lil_bro, t_stack *stack_a, t_sta
     int rrarb;
     
     rarb = ft_max(ind_big_bro, ind_lil_bro);
-    rrarrb = ft_max(ft_stacklast(stack_a)->index - ind_big_bro, ft_find_max(stack_b)->index - ind_lil_bro) + 1;
+    rrarrb = ft_max(ft_stacklast(stack_a)->index - ind_big_bro, ft_stacklast(stack_b)->index - ind_lil_bro) + 1;
     rarrb = ind_big_bro + ft_stacklast(stack_b)->index - ind_lil_bro + 1;
     rrarb = ind_lil_bro + ft_stacklast(stack_a)->index - ind_big_bro + 1;
+	// printf("les index : %d : %d\n", ind_big_bro, ind_lil_bro);
+	// printf("%d : %d : %d : %d\n", rarb, rrarrb, rarrb, rrarb);
     if (rarb <= rrarb && rarb <= rrarrb && rarb <= rarrb)
         return (RARB);
     if (rrarrb <= rarb && rrarrb <= rrarb && rrarrb <= rarrb)

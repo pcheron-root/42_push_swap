@@ -67,4 +67,5 @@ dkms.conf
 
 # Visualizer
 Visualizer/*
+Visualizer
 imgui.ini

@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 21:48:37 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/26 01:24:25 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/04/27 19:50:42 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_make_order(t_stack **stack)
 	else
 	{
 		while (ind_min <= size)
-			(write(1, "rra\n", 3), ft_r_rotate(stack), ind_min++);
+			(write(1, "rra\n", 4), ft_r_rotate(stack), ind_min++);
 	}
 }
 

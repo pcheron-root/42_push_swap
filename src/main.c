@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/27 19:51:00 by pcheron           #+#    #+#             */
+/*   Updated: 2023/04/27 20:15:42 by pcheron          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
@@ -7,10 +18,10 @@ int	ft_find_best_elem(t_stack *stack_a, t_stack *stack_b)
 	int	best_score;
 
 	ind_elem = 0;
-	best_score = 1000;
+	best_score = ft_find_best_score(stack_a, stack_b, ft_find_big_brother(stack_a, ft_nbr_at_index(stack_b, stack_b->index)), stack_b->index);
 	while (stack_b)
 	{
-		if (best_score > ft_find_best_score(stack_a, stack_b, ft_find_big_brother(stack_a, ft_nbr_at_index(stack_b, stack_b->index)), stack_b->index))
+		if (best_score >= ft_find_best_score(stack_a, stack_b, ft_find_big_brother(stack_a, ft_nbr_at_index(stack_b, stack_b->index)), stack_b->index))
 		{
 			best_score = ft_find_best_score(stack_a, stack_b, ft_find_big_brother(stack_a, ft_nbr_at_index(stack_b, stack_b->index)), stack_b->index);
 			ind_elem = stack_b->index;

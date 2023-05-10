@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:45 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/29 14:28:10 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/05/10 16:17:53 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,29 @@ void	ft_free(void **ptr)
 
 bool	ft_atoi(int *result, char *str)
 {
-	int	i;
 	int	sign;
 
 	sign = 1;
-	i = 0;
-	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while ((*str > 8 && *str < 14) || *str == 32)
+		*str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -1;
-		i++;
+		*str++;
+		if (!*str)
+			return (false);
 	}
 	*result = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		if (*result > *result * 10 + str[i] - 48)
+		if (*result > *result * 10 - 48 + *str && !(*result == INT_MAX / 10
+				&& *str == '8' && !str[1] && sign < 0))
 			return (false);
-		*result = *result * 10 + str[i] - 48;
-		i++;
+		*result = *result * 10 - 48 + *str;
+		*str++;
 	}
-	*result *= sign;
-	return (true);
+	if (*str)
+		return (false);
+	return (*result *= sign, true);
 }

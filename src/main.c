@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:51:00 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/29 14:53:08 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/05/10 15:32:32 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,18 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 
+	if (!*stack_a)
+		return ;
 	i = ft_stacklast(*stack_a)->index;
 	if (!ft_is_sorted(*stack_a))
 	{
 		while (i > 2)
 		{
-			write(1, "pb\n", 3);
-			ft_push(stack_a, stack_b);
+			(write(1, "pb\n", 3), ft_push(stack_a, stack_b));
 			i--;
 		}
 		if (!ft_is_sorted(*stack_a))
-		{
-			write(1, "sa\n", 3);
-			ft_swap(stack_a);
-		}
+			(write(1, "sa\n", 3), ft_swap(stack_a));
 		if (*stack_b)
 		{
 			i = ft_stacklast(*stack_b)->index;
@@ -98,10 +96,12 @@ int	main(int argc, char **argv)
 	while (argv[++i])
 	{
 		if (!ft_atoi(&nbr, argv[i]))
-			return (ft_stackclear(&stack_a), EXIT_FAILURE);
+			return (write(2, "Error\n", 6), ft_stackclear(&stack_a),
+				EXIT_FAILURE);
 		new = ft_stacknew(nbr);
 		if (!new || ft_is_duplicate(stack_a, nbr))
-			return (ft_stackclear(&stack_a), EXIT_FAILURE);
+			return (write(2, "Error\n", 6), ft_stackclear(&stack_a),
+				EXIT_FAILURE);
 		ft_stackadd_back(&stack_a, new);
 	}
 	ft_set_index(stack_a);

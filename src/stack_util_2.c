@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 21:48:37 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/29 14:28:14 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/05/10 15:27:28 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ bool	ft_is_sorted(t_stack *stack)
 	int	max;
 	int	min;
 
+	if (!stack)
+		return (true);
 	max = ft_find_max(stack)->nbr;
 	min = ft_find_min(stack)->nbr;
 	while (stack->next)
@@ -62,6 +64,8 @@ void	ft_make_order(t_stack **stack)
 	int	ind_min;
 	int	size;
 
+	if (!*stack)
+		return ;
 	ind_min = ft_find_min(*stack)->index;
 	size = ft_stacklast(*stack)->index;
 	if (ind_min <= size / 2)

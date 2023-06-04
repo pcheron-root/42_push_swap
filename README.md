@@ -42,7 +42,7 @@ there are 4 possibilities to place an element from b to a :
 
 - Using reverse rotates (rrr, rra and rrb moves for put 4 and 7 at the top of each list from the bottom)!
 
-[Screenshot from 2023-06-04 14-21-37](https://github.com/pcheron-root/push_swap/assets/126467996/ccbe0264-0ff1-4963-a58d-d68660ecf4ab)
+![Screenshot from 2023-06-04 14-21-37](https://github.com/pcheron-root/push_swap/assets/126467996/ccbe0264-0ff1-4963-a58d-d68660ecf4ab)
 
 - Using rotate a and reverse rotate b
 

@@ -15,10 +15,6 @@ In the 3 remaining elements, we can have only 6 cases.
 
 ![Screenshot from 2023-06-04 14-18-36](https://github.com/pcheron-root/push_swap/assets/126467996/0a87c51f-4033-42d3-a562-55ee31fd8463)
 
-for 3 of them the stack is ordered.
-
-![Screenshot from 2023-04-26 12-47-40](https://user-images.githubusercontent.com/126467996/234555769-3c2ada36-5ecb-4c26-9c2c-8e19f46cc8b0.png)
-
 In half of all cases, the stack is ordered as follows.
 
 ![Screenshot from 2023-06-04 14-18-45](https://github.com/pcheron-root/push_swap/assets/126467996/90e6725a-8a99-476b-8c1c-b9b2ffd44bca)

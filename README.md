@@ -37,13 +37,20 @@ To be efficient, for each element of the stack B we will calculate in how many m
 there are 4 possibilities to place an element from b to a :
 
 - Using rotates (rr, ra and rb moves for put 4 and 7 at the top of each list)
+
 ![Screenshot from 2023-06-04 14-21-14](https://github.com/pcheron-root/push_swap/assets/126467996/c6e82ab0-ca4c-49d5-a322-49e50fb7e055)
+
 - Using reverse rotates (rrr, rra and rrb moves for put 4 and 7 at the top of each list from the bottom)!
+
 [Screenshot from 2023-06-04 14-21-37](https://github.com/pcheron-root/push_swap/assets/126467996/ccbe0264-0ff1-4963-a58d-d68660ecf4ab)
+
 - Using rotate a and reverse rotate b
+
 ![Screenshot from 2023-06-04 14-21-29](https://github.com/pcheron-root/push_swap/assets/126467996/a62df96d-c0da-4ef2-b2f0-7a2e62fec7e7)
+
 - Using rotate b and reverse rotate a!
-- [Screenshot from 2023-06-04 14-21-22](https://github.com/pcheron-root/push_swap/assets/126467996/6dcba55e-5181-427a-9ca6-ea2d8f588338)
+
+![Screenshot from 2023-06-04 14-21-22](https://github.com/pcheron-root/push_swap/assets/126467996/6dcba55e-5181-427a-9ca6-ea2d8f588338)
 
 We will calculate the number of moves for each possibility and retain the least expensive.
 To calculate each possibility we can use indexes.

@@ -36,11 +36,11 @@ To be efficient, for each element of the stack B we will calculate in how many m
 
 there are 4 possibilities to place an element from b to a :
 
-- Using rotates (rr, ra and rb moves for put 4 and 7 at the top of each list)
+- Using rotates (rr, ra and rb moves to put 4 and 7 at the top of each list)
 
 ![Screenshot from 2023-06-04 14-21-14](https://github.com/pcheron-root/push_swap/assets/126467996/c6e82ab0-ca4c-49d5-a322-49e50fb7e055)
 
-- Using reverse rotates (rrr, rra and rrb moves for put 4 and 7 at the top of each list from the bottom)!
+- Using reverse rotates (rrr, rra and rrb moves to put 4 and 7 at the top of each list from the bottom)!
 
 ![Screenshot from 2023-06-04 14-21-37](https://github.com/pcheron-root/push_swap/assets/126467996/ccbe0264-0ff1-4963-a58d-d68660ecf4ab)
 
@@ -72,6 +72,6 @@ index of b + (size of stack a - current index of a)
 ### step 4 - make order
 
 all elements have been returned to stack A, stack B is empty.
-Use rotate and reverse rotate for put the smallest element on top of the stack
+Use rotate and reverse rotate to put the smallest element on top of the stack
 
 ![Screenshot from 2023-06-04 14-22-17](https://github.com/pcheron-root/push_swap/assets/126467996/33ca7b89-4c37-4c21-be60-232a650fc9b1)

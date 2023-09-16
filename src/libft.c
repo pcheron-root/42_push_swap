@@ -37,12 +37,12 @@ bool	ft_atoi(int *result, char *str)
 
 	sign = 1;
 	while ((*str > 8 && *str < 14) || *str == 32)
-		*str++;
+		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign = -1;
-		*str++;
+		str++;
 		if (!*str)
 			return (false);
 	}
@@ -53,7 +53,7 @@ bool	ft_atoi(int *result, char *str)
 				&& *str == '8' && !str[1] && sign < 0))
 			return (false);
 		*result = *result * 10 - 48 + *str;
-		*str++;
+		str++;
 	}
 	if (*str)
 		return (false);

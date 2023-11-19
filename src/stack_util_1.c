@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 01:02:51 by pcheron           #+#    #+#             */
-/*   Updated: 2023/04/29 14:31:38 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/11/19 14:47:33 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_stack	*ft_stacknew(int nbr)
 	new->nbr = nbr;
 	new->index = 0;
 	new->next = NULL;
+	return (new);
 }
 
 t_stack	*ft_stacklast(t_stack *stack)

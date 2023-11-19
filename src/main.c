@@ -6,7 +6,7 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:51:00 by pcheron           #+#    #+#             */
-/*   Updated: 2023/05/10 15:32:32 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/11/19 14:45:42 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	main(int argc, char **argv)
 	nbr = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	(void)argc;
 	while (argv[++i])
 	{
 		if (!ft_atoi(&nbr, argv[i]))
